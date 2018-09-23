@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ClassDetails">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:height="10dp"
+        android:background="@color/colorBar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/class_name"
+            android:textSize="25sp"
+            android:text="CS61A"/>
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/instructor_name"
+            android:textSize="18sp"
+            android:text="John Denero"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/description"
+        android:textSize="10sp"
+        android:text="An introduction to programming and computer science focused on abstraction techniques as means to manage program complexity."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:textSize="10sp"
+        android:text="Terms Offered: Fall 2018, Summer 2018, Spring 2018"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:textSize="12sp"
+        android:text="Class Availability:"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:textSize="9sp"
+        android:text="15 Spots for EECS"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:textSize="9sp"
+        android:text="22 Spots for Undeclared Engineering"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:textSize="9sp"
+        android:text="70 spots for Letters and Science Undeclared"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:height="2dp"
+        android:background="@color/colorBar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:text="Average Grade"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/border"
+        ></FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="7dp"
+        android:layout_height="wrap_content"
+        android:height="2dp"
+        android:background="@color/colorBar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp"
+        android:text="Professor Rating"/>
+
+</LinearLayout>

@@ -1,5 +1,7 @@
 package com.example.android.coursehelper;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void addClass(String classname, LinearLayout layout) {
+    private void addClass(final String classname, LinearLayout layout) {
         Typeface ubuntu = Typeface.createFromAsset(getAssets(),  "ubuntu_b.ttf");
         Typeface eczar = Typeface.createFromAsset(getAssets(),  "eczar_regular.ttf");
 
@@ -56,11 +58,22 @@ public class MainActivity extends AppCompatActivity {
 
         TextView class_description = (TextView) list_item.findViewById(R.id.description);
         class_description.setText(info[1]);
-        class_description.setTypeface(eczar);
+        class_description.setTypeface(ubuntu);
 
         TextView instructor = (TextView) list_item.findViewById(R.id.instructor_name);
         instructor.setText(info[0]);
-        class_description.setTypeface(ubuntu);
+
+
+        list_item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ClassDetails.class);
+                intent.putExtra("class", classname);
+                intent.putExtra("instructor", classes.get(classname)[0]);
+                intent.putExtra("description", classes.get(classname)[1]);
+                startActivity(intent);
+            }
+        });
 
         layout.addView(list_item);
     }

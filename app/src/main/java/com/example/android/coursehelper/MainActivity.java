@@ -6,6 +6,7 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,6 +17,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
@@ -24,23 +32,37 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private HashMap<String, String[]> classes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         classes = new HashMap<>();
-        classes.put("CS61A", new String[]{"John Denero", "An introduction to programming and computer science focused on abstraction techniques as means to manage program complexity. "});
-        classes.put("CS61B", new String[]{"Josh Hug", "Fundamental dynamic data structures, including linear lists, queues, trees, and other linked structures; arrays strings, and hash tables. "});
-        classes.put("CS61C", new String[]{"Dan Garcia", "The internal organization and operation of digital computers. Machine architecture, support for high-level languages, and operating systems."});
-        classes.put("CS188", new String[]{"Peter Abbiel", "Ideas and techniques underlying the design of intelligent computer systems."});
-        classes.put("CS70", new String[]{"Anant Sahai", "Misery and Death"});
+
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference cs = db.child("CS");
+
+        cs.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String[] data = new String[]{(String) ds.child("instructor").getValue(), (String) ds.child("description").getValue()};
+                    classes.put((String) ds.child("name").getValue(), data);
+                }
+                LinearLayout layout = (LinearLayout) findViewById(R.id.class_list);
+                for (String clas : classes.keySet()) {
+                    addClass(clas, layout);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.class_list);
-        for (String clas : classes.keySet()) {
-            addClass(clas, layout);
-        }
 
 
     }

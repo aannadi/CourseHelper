@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "414071391692",
+    "firebase_url": "https://coursehelper-fb6a3.firebaseio.com",
+    "project_id": "coursehelper-fb6a3",
+    "storage_bucket": "coursehelper-fb6a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414071391692:android:79e2366ed023407b",
+        "android_client_info": {
+          "package_name": "com.example.android.coursehelper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414071391692-6lrq3sdgd5hdq4em9hcojir3kn9ga5be.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.coursehelper",
+            "certificate_hash": "4ec91f2aa8d0e33818a91b37e57b654ac1b6c022"
+          }
+        },
+        {
+          "client_id": "414071391692-uvgre0rk46bm10qui97s296pv3rs7cla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOvuBW1glcjRgT1PSpw488ncZZt5t-Dvk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414071391692-uvgre0rk46bm10qui97s296pv3rs7cla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

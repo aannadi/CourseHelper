@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    String[] data = new String[]{(String) ds.child("instructor").getValue(), (String) ds.child("description").getValue()};
+                    String[] data = new String[]{(String) ds.child("instructor").getValue(),
+                                (String) ds.child("description").getValue(), (String) ds.child("link").getValue()};
                     classes.put((String) ds.child("name").getValue(), data);
                 }
                 LinearLayout layout = (LinearLayout) findViewById(R.id.class_list);
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("class", classname);
                 intent.putExtra("instructor", classes.get(classname)[0]);
                 intent.putExtra("description", classes.get(classname)[1]);
+                intent.putExtra("link", classes.get(classname)[2]);
                 startActivity(intent);
             }
         });
